@@ -17,9 +17,13 @@ class NotificationPage extends StatelessWidget {
         children: [
           Text(message.notification?.title.toString() ?? 'No Title'),
           Text(message.notification?.body.toString() ?? 'No Body'),
-          Text(message.data.toString() ?? 'No Data'),
+          Text(message.data.toString()),
+          Image.network(
+            message.notification?.android?.imageUrl.toString() ??
+                'https://via.placeholder.com/150',
+          ),
         ],
-      )
+      ),
     );
   }
 }
